@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from './components/Header';
 import EventCard from './components/EventCard';
-import { useWebhooks } from './hooks/useWebhooks';
+import { useWebhooks } from './hooks/useWebHooks';
 import { AnimatePresence, motion } from 'framer-motion';
+import './App.css';
+
 
 // 2. Define Container Variants for Staggering
 const listVariants = {
@@ -17,7 +19,13 @@ const App = () => {
   const { data: events, isLoading, isError } = useWebhooks();
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#010409', color: '#e6edf3' }}>
+    <div style={{ 
+      minHeight: '100vh', 
+      backgroundColor: '#010409', // Keep this as primary color
+      color: '#e6edf3',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
       <Header />
       <main style={{ maxWidth: '750px', margin: '2rem auto', padding: '0 1rem' }}>
         
