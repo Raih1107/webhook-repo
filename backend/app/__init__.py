@@ -9,9 +9,9 @@ load_dotenv() # This loads the variables from .env
 def create_app():
     app = Flask(__name__)
     
-    # This allows both  local dev and potential production needs
+    # This allows your Render frontend to talk to your Render backend
     CORS(app, resources={r"/*": {
-        "origins": "*",
+        "origins": "*", 
         "methods": ["GET", "POST", "OPTIONS"]
     }})
 
