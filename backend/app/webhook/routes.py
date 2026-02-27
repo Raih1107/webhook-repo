@@ -87,3 +87,12 @@ def get_latest():
         return jsonify(events), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+@webhook.route('/ping', methods=["GET"])
+def ping():
+    """
+    Lightweight endpoint for cron-job.org to keep the server awake
+    without fetching large amounts of data.
+    """
+    return jsonify({"status": "active", "message": "PONG"}), 200
