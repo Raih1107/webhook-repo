@@ -43,7 +43,7 @@ The application follows a decoupled monorepo architecture.
 ### 2. Render Free-Tier Latency (Cold Starts)
 
 **Challenge:** Render's free tier spins down services after 15 minutes of inactivity, causing a 50-second delay for the first request.
-**Solution:** I implemented a "Keep-Alive" system using `cron-job.org`. Every 10 minutes, an external pinger hits the `/webhook/latest` endpoint, ensuring the server remains "warm" and responsive for recruiters.
+**Solution:** I implemented a "Keep-Alive" system using `cron-job.org`. Every 10 minutes, an external pinger hits the `/webhook/ping` endpoint, ensuring the server remains "warm" and responsive for recruiters.
 
 ---
 
