@@ -19,6 +19,6 @@ def create_app():
     mongo.init_app(app)
     
     #Ensure this matches the endpoint that is hit in the browser
-    app.register_blueprint(webhook, url_prefix='/webhook') 
+    app.register_blueprint(webhook)
     
     return app
